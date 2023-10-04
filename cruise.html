@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cruise</title>
+    </head>
+
+    <body>
+        <h2>Tejeswar goes on a cruise</h2>
+
+        <script>
+            let my_cruise={}
+            function selectCruise(){
+                var sharecbn = document.getElementById('cheese').checked;
+                var breakfst = document.getElementById('olive').checked;
+                var pool = document.getElementById('onion').checked;
+                my_cruise.sharedcabin = sharecbn;
+                my_cruise.breakfast = breakfst
+                my_cruise.poolpass = pool
+                document.getElementById('checksec').innerHTML = JSON.stringify(my_cruise)
+            }
+
+               
+        </script>
+
+        <form>
+            <input type="checkbox" id="cheese" name="topping1" value="True">
+            <label for="cb1_cheese"> Shares Cabin</label> </br>
+
+            <input type="checkbox" id="olive" name="topping2" value="True">
+            <label for="cb1_olive">Breakfast</label> </br>
+
+            <input type="checkbox" id="onion" name="topping3" value="False">
+            <label for="cb1_onion">Pool Pass</label>
+
+            <input type="button" onclick="selectCruise()" value="Get values from check boxes">
+
+        </form>
+
+        <p id="checksec">
+
+        </p>
+
+        
+
+    </body>
+
+</html>
