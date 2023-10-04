@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+    <body> 
+        <h2>
+            Tejeswar Shows tip amount
+        </h2>
+
+        <script>
+
+            function tips(){
+                var baseamount = parseInt(document.getElementById('baseamt').value)
+                var tipamount = parseInt(document.getElementById('tipamt').value)
+                var myOutput=""
+                var toShow=""
+                myOutput = "Tip are: " + tipamount + "% is" + (baseamount*tipamount)/100;
+                for(i=1; i<=4; i++){
+                    tipamount = tipamount + 4
+                    priceamount = (baseamount * tipamount)/100;
+                    toShow = toShow + tipamount + "% is" + priceamount + ";"
+                }
+
+                myOutput = myOutput+toShow
+                document.getElementById("tipdisplay").innerHTML = myOutput
+
+            }
+
+
+            
+
+
+        </script>
+
+        <label for="form1_age"> Enter base amount</label>
+        <input type="number" name="baseamount" id="baseamt" value="50"> 
+
+        <label for="form1_age"> Enter the tip amount</label>
+        <input type="number" name="tipamount" id="tipamt" value="15">
+
+        <input type="button" onclick="tips()" value="Show tip">
+
+        <p id="tipdisplay">
+
+        </p>
+
+       
+
+    </body>
+
+</html>
