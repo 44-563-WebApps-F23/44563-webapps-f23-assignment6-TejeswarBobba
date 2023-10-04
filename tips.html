@@ -25,7 +25,26 @@
                 document.getElementById("tipdisplay").innerHTML = myOutput
 
             }
+            
+            function chooseOp(){
+                var baseamount = parseInt(document.getElementById('baseamt').value)
+                var tipamount = parseInt(document.getElementById('tipamt').value)
+                var res=0
+                
+                if(document.getElementById('red').checked){
+                    res = baseamount + tipamount
+                }
 
+                if(document.getElementById('blue').checked){
+                    res = baseamount-tipamount
+                }
+
+                if(document.getElementById('green').checked){
+                    res = baseamount*tipamount
+                }
+
+                document.getElementById("radiosec").innerHTML = res
+            }
 
             
 
@@ -44,7 +63,20 @@
 
         </p>
 
-       
+        <form>
+            <input type="radio" id="red" name="color" value="sum">
+            <label for="sum">sum</label> </br>
+
+            <input type="radio" id="blue" name="color" value="difference">
+            <label for="diff">diff</label> </br>
+
+            <input type="radio" id="green" name="color" value="product">
+            <label for="mult">mult</label>  
+            
+            <input type="button" onclick="chooseOp()" value="Get values from radio group">
+        </form>
+
+        <p id="radiosec">This will be replaced.</p>
 
     </body>
 
