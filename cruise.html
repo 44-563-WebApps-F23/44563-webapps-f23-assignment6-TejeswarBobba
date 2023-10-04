@@ -18,7 +18,13 @@
                 my_cruise.poolpass = pool
                 document.getElementById('checksec').innerHTML = JSON.stringify(my_cruise)
             }
-
+            function updateCruise(){
+                var day=document.getElementById('dayCruise').value
+                var prc = document.getElementById('priceCruise').value
+                my_cruise['days']=day
+                my_cruise['price'] = prc
+                document.getElementById('updatesec').innerHTML = JSON.stringify(my_cruise)
+            }
                
         </script>
 
@@ -35,6 +41,20 @@
             <input type="button" onclick="selectCruise()" value="Get values from check boxes">
 
         </form>
+
+        <form>
+            <label for="cheese">Enter the number of days</label>
+            <input type="text" id="dayCruise" name="topping1" value="days" checked>
+
+            <label for="butter">Enter price</label>
+            <input type="text" id="priceCruise" name="topping2" value="True" checked>
+
+            <input type="button" onclick="updateCruise()" value="Update the cruise">
+        </form>
+
+        <p id="updatesec">
+
+        </p>
 
         <p id="checksec">
 
