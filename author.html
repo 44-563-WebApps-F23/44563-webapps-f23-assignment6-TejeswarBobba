@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
- <head>
+
+<head>
     <title>Author entry - Tejeswar Bobba</title>
- </head>
+</head>
+
 <body>
 
-<h2>Author entry - Tejeswar Bobba</h2>
-<h2>Getting input</h2>
-<form>
+    <h2>Author entry - Tejeswar Bobba</h2>
+    <h2>Getting input</h2>
+    <form>
 
-    <label for="secretAuthor">The hidden author name:</label>
-    <input type="password" id="secretAuthor" value="Dickens">
-    <br>
-    <label for="guessAuthor">Guess the author:</label>
-    <input type="text" id="guessAuthor">
-    <br>
-    <button type="button" onclick="checkAuthor()">Check the guess</button>
-</form>
-<p>Results: <span id="result"></span></p>
+        <label for="secretAuthor">The hidden author name:</label>
+        <input type="password" id="secretAuthor" value="Dickens">
+        <br>
+        <label for="guessAuthor">Guess the author:</label>
+        <input type="text" id="guessAuthor">
+        <br>
+        <button type="button" onclick="checkAuthor()">Check the guess</button>
+    </form>
+    <p>Results: <span id="result"></span></p>
+
+
+    <div class="container">
+        <img id="city" src="Barcelona.jpg" alt="barcelona" height="100" width="100" onclick="selectImage()">
+    </div>
+</body>
 
 <script>
 
@@ -37,29 +45,24 @@
         resultElement.textContent = `Correct guesses: ${good} | Wrong guesses: ${oops}`;
     }
 
-    let useImage=1
-    function selectImage(){
-        switch(useImage){
+    var useImage = 1;
+    function selectImage() {
+        switch(useImage) {
             case 1:
-                document.getElemnetById('city').src="Barcelona.jpg";
-                useImage=2
+                document.getElementById("city").src = "Barcelona.jpg";
+                useImage = useImage + 1;
                 break;
             case 2:
-                document.getElementById('city').src = "Boston.jpg";
-                useImage=3
+                document.getElementById("city").src = "Boston.jpg";
+                useImage = useImage + 1;
                 break;
             case 3:
-                document.getElementById('city').src = "Osaka.jpg";
-                useImage=1
+                document.getElementById("city").src = "Osaka.jpg";
+                useImage =1;
                 break;
-            default:
         }
     }
 
-</script> 
+</script>
 
-<div class="container">
-    <img id="city" src="Barcelona.jpg" alt="barcelona" height="100" width="100" onclick="selectImage()">
-</div>
-</body>
-</html> 
+</html>
